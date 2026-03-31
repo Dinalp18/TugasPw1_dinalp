@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil Sekolah - SMA Negeri 1 Tanah Abang Pali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      scroll-behavior: smooth;
+    }
+
+    /* Logo Sekolah */
+    .logo-sekolah {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #2c5f2d, #97bc62);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .logo-sekolah::after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+    .logo-sekolah-small {
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+    }
+    .logo-sekolah-small::after {
+      width: 12px;
+      height: 12px;
+      bottom: 5px;
+      right: 5px;
+    }
+
+    /* Header Profil */
+    .header-profil {
+      background: linear-gradient(rgba(44, 95, 45, 0.8), rgba(44, 95, 45, 0.8)),
+                  url('https://images.unsplash.com/photo-1581090464777-513839d79b1a?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+      position: relative;
+    }
+    .header-profil::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to top, #f0f4f8, transparent);
+    }
+
+    /* Section Title */
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #2c5f2d;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background-color: #97bc62;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-title-left::after {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    /* Card & Komponen */
+    .feature-card {
+      transition: all 0.3s ease;
+      border: none;
+      border-top: 4px solid #2c5f2d;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(44, 95, 45, 0.15);
+    }
+    .img-placeholder {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #e0ebe0, #97bc62);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c5f2d;
+      font-size: 1.2rem;
+      border-radius: 8px;
+    }
+
+    /* Tombol & Navbar */
+    .navbar {
+      background-color: #2c5f2d !important;
+    }
+    .btn-success-custom {
+      background-color: #2c5f2d;
+      border-color: #2c5f2d;
+    }
+    .btn-success-custom:hover {
+      background-color: #1f4620;
+      border-color: #1f4620;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2c5f2d;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="logo-sekolah-small me-2"></div>
+        <a class="navbar-brand fw-bold" href="index.html">SMAN 1 Tanah Abang Pali</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSekolah">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSekolah">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill me-1"></i> Beranda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="profil.html"><i class="bi bi-building-fill me-1"></i> Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="program.html"><i class="bi bi-book-fill me-1"></i> Program</a></li>
+          <li class="nav-item"><a class="nav-link" href="fasilitas.html"><i class="bi bi-gear-fill me-1"></i> Fasilitas</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html"><i class="bi bi-envelope-fill me-1"></i> Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Profil -->
+  <section class="header-profil text-center">
+    <div class="container">
+      <div class="d-flex justify-content-center mb-4">
+        <div class="logo-sekolah"></div>
+      </div>
+      <h1 class="display-5 fw-bold">Profil SMA Negeri 1 Tanah Abang Pali</h1>
+      <p class="lead mt-3">Menjadi Sekolah Unggulan yang Mendidik Siswa Berkarakter, Cerdas, dan Mandiri</p>
+    </div>
+  </section>
+
+  <!-- Sejarah Singkat -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <h2 class="section-title section-title-left">Sejarah Singkat</h2>
+          <p class="text-muted">
+            SMA Negeri 1 Tanah Abang Pali didirikan pada tanggal 15 Agustus 1985 dengan nama awal Sekolah Menengah Atas Negeri Tanah Abang. Pada saat berdirinya, sekolah hanya memiliki 4 guru dan 87 siswa yang berasal dari berbagai daerah di sekitar Kabupaten Pali.
+          </p>
+          <p class="text-muted">
+            Pada tahun 1990, sekolah mengalami perluasan gedung dan penambahan tenaga pengajar, serta mulai membuka program studi IPA dan IPS. Tahun 2005, sekolah berhasil meraih akreditasi B dari BAN-PT, dan pada tahun 2018 naik menjadi akreditasi A yang hingga saat ini masih dipertahankan.
+          </p>
+          <p class="text-muted mb-0">
+            Seiring perkembangan zaman, SMA Negeri 1 Tanah Abang Pali terus berinovasi dalam sistem pembelajaran dan pengembangan fasilitas untuk memberikan pendidikan berkualitas yang sesuai dengan standar nasional dan global.
+          </p>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="img-placeholder">
+            <div class="text-center">
+              <i class="bi bi-building-fill display-1 mb-2"></i>
+              <p>Gedung Utama SMA Negeri 1 Tanah Abang Pali</p>
+            </div>
+          </div>
+          <div class="row g-2 mt-3">
+            <div class="col-6">
+              <div class="img-placeholder" style="height: 150px;">
+                <div class="text-center">
+                  <i class="bi bi-people-fill display-6 mb-1"></i>
+                  <p>Pengurus Sekolah Tahun 1985</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="img-placeholder" style="height: 150px;">
+                <div class="text-center">
+                  <i class="bi bi-flag-fill display-6 mb-1"></i>
+                  <p>Upacara Peresmian Gedung Baru</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visi & Misi -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Visi & Misi Sekolah</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body p-5 text-center">
+              <div class="mb-4 text-success">
+                <i class="bi bi-eye-fill display-4"></i>
+              </div>
+              <h3 class="card-title text-success fw-bold mb-3">Visi</h3>
+              <p class="card-text text-muted fs-5">
+                "Menjadi Sekolah Unggulan yang Mendidik Siswa Berkarakter, Cerdas, dan Mandiri dengan Berwawasan Lingkungan dan Global"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body p-5">
+              <div class="mb-4 text-center text-success">
+                <i class="bi bi-list-check-fill display-4"></i>
+              </div>
+              <h3 class="card-title text-success fw-bold mb-3 text-center">Misi</h3>
+              <ul class="list-unstyled text-muted">
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <span>Mengoptimalkan proses pembelajaran saintifik yang aktif, kreatif, inovatif, dan menyenangkan untuk mengembangkan potensi siswa secara maksimal.</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <span>Meningkatkan prestasi akademik dan non-akademik melalui berbagai program pembinaan dan pengembangan bakat.</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <span>Melaksanakan manajemen sekolah yang profesional berdasarkan Standar Nasional Pendidikan dan prinsip good governance.</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <span>Membangun karakter siswa dengan nilai-nilai agama, budaya lokal, dan cinta lingkungan serta negara.</span>
+                </li>
+                <li class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <span>Meningkatkan kerja sama dengan berbagai pihak untuk mendukung peningkatan kualitas pendidikan dan pengembangan siswa.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Singkat Sekolah -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Data Singkat Sekolah</h2>
+      <div class="row g-4 text-center">
+        <div class="col-sm-6 col-lg-3">
+          <div class="bg-white p-4 rounded shadow-sm h-100 transition-all hover:shadow-lg">
+            <div class="mb-3 text-success">
+              <i class="bi bi-people-fill display-4"></i>
+            </div>
+            <h3 class="text-success fw-bold">650+</h3>
+            <p class="mb-0 text-muted fw-medium">Jumlah Siswa Aktif</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="bg-white p-4 rounded shadow-sm h-100 transition-all hover:shadow-lg">
+            <div class="mb-3 text-success">
+              <i class="bi bi-person-badge-fill display-4"></i>
+            </div>
+            <h3 class="text-success fw-bold">52</h3>
+            <p class="mb-0 text-muted fw-medium">Guru Berkompeten</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="bg-white p-4 rounded shadow-sm h-100 transition-all hover:shadow-lg">
+            <div class="mb-3 text-success">
+              <i class="bi bi-door-open-fill display-4"></i>
+            </div>
+            <h3 class="text-success fw-bold">24</h3>
+            <p class="mb-0 text-muted fw-medium">Rombongan Belajar</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="bg-white p-4 rounded shadow-sm h-100 transition-all hover:shadow-lg">
+            <div class="mb-3 text-success">
+              <i class="bi bi-trophy-fill display-4"></i>
+            </div>
+            <h3 class="text-success fw-bold">42</h3>
+            <p class="mb-0 text-muted fw-medium">Penghargaan & Prestasi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sambutan Kepala Sekolah -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Sambutan Kepala Sekolah</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-4 bg-success text-white d-flex align-items-center justify-content-center">
+                <div class="text-center p-4">
+                  <div class="rounded-circle bg-white text-success d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 100px; height: 100px;">
+                    <i class="bi bi-person-fill display-4"></i>
+                  </div>
+                  <h5 class="fw-bold mb-1">Dr. H. Sukardi, S.Pd., M.Pd.</h5>
+                  <p class="mb-0 small">Kepala Sekolah</p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-5">
+                  <p class="card-text text-muted mb-3">
+                    kita semua.
+                </p>
+                <p class="card-text text-muted mb-3">
+                  Pada kesempatan yang berharga ini, saya ingin menyampaikan ucapan terima kasih yang sebesar-besarnya kepada seluruh komponen sekolah, mulai dari guru, staf, siswa, orang tua/wali murid, serta semua pihak yang telah memberikan dukungan dan kerja sama dalam mengembangkan SMA Negeri 1 Tanah Abang Pali.
+                </p>
+                <p class="card-text text-muted mb-3">
+                  Tahun ini kita kembali melaksanakan Penerimaan Peserta Didik Baru (PPDB) dengan sistem yang transparan dan akuntabel. Saya mengimbau kepada seluruh calon siswa dan orang tua/wali murid untuk tidak mudah terpengaruh oleh informasi yang tidak jelas dan tidak percaya pada iming-iming dari pihak luar yang mengklaim dapat memudahkan pendaftaran. Semua proses seleksi kami lakukan secara adil, bersih, dan berdasarkan ketentuan yang berlaku.
+                </p>
+                <p class="card-text text-muted mb-0">
+                  SMA Negeri 1 Tanah Abang Pali akan terus berkomitmen untuk memberikan pendidikan berkualitas, membentuk generasi muda yang tidak hanya cerdas secara akademik, tetapi juga memiliki karakter yang kuat, cinta tanah air, dan siap bersaing di tingkat global. Mari kita bersama-sama menjadikan sekolah ini sebagai tempat berkembangnya potensi terbaik bagi setiap siswa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tujuan & Sasaran Sekolah -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Tujuan & Sasaran Sekolah</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm feature-card">
+          <div class="card-body p-4">
+            <div class="mb-3 text-center text-success">
+              <i class="bi bi-bullseye-fill display-4"></i>
+            </div>
+            <h3 class="card-title text-success fw-bold mb-3 text-center">Tujuan Sekolah</h3>
+            <ul class="list-unstyled text-muted">
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-arrow-right-circle-fill text-success me-2 mt-1"></i>
+                <span>Mendidik siswa agar memiliki pengetahuan, keterampilan, dan sikap yang sesuai dengan standar kompetensi lulusan SMA.</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-arrow-right-circle-fill text-success me-2 mt-1"></i>
+                <span>Membentuk kepribadian siswa yang beriman, bertakwa, berakhlak mulia, dan memiliki jiwa kepemimpinan.</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-arrow-right-circle-fill text-success me-2 mt-1"></i>
+                <span>Mengembangkan potensi siswa dalam bidang akademik, olahraga, seni, dan kewirausahaan.</span>
+              </li>
+              <li class="mb-0 d-flex align-items-start">
+                <i class="bi bi-arrow-right-circle-fill text-success me-2 mt-1"></i>
+                <span>Menciptakan lingkungan sekolah yang aman, nyaman, bersih, dan ramah lingkungan.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm feature-card">
+          <div class="card-body p-4">
+            <div class="mb-3 text-center text-success">
+              <i class="bi bi-signpost-2-fill display-4"></i>
+            </div>
+            <h3 class="card-title text-success fw-bold mb-3 text-center">Sasaran Sekolah</h3>
+            <ul class="list-unstyled text-muted">
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-square-fill text-success me-2 mt-1"></i>
+                <span>Meningkatkan indeks prestasi siswa minimal 5% setiap tahun.</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-square-fill text-success me-2 mt-1"></i>
+                <span>Meningkatkan jumlah prestasi siswa di tingkat kabupaten, provinsi, dan nasional.</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-square-fill text-success me-2 mt-1"></i>
+                <span>Meningkatkan kompetensi guru melalui pelatihan dan pengembangan profesi.</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-square-fill text-success me-2 mt-1"></i>
+                <span>Meningkatkan kualitas fasilitas sekolah untuk mendukung proses pembelajaran.</span>
+              </li>
+              <li class="mb-0 d-flex align-items-start">
+                <i class="bi bi-check-square-fill text-success me-2 mt-1"></i>
+                <span>Memperkuat kerja sama dengan komunitas lokal, pemerintah, dan dunia usaha/industri.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tombol Kembali -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <a href="index.html" class="btn btn-success-custom btn-lg px-5">
+      <i class="bi bi-arrow-left-circle-fill me-2"></i> Kembali ke Beranda
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4">
+  <div class="container">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+          <div class="logo-sekolah-small me-2"></div>
+          <h5 class="fw-bold text-white mb-0">SMA NEGERI 1 TANAH ABANG PALI</h5>
+        </div>
+        <p class="text-white-50 mt-2 mb-0 small">
+          Jl. Merdeka No. 15, Desa Tanah Abang, Kecamatan Tanah Abang, Kabupaten Pali, Sumatera Selatan <br>
+          Telepon: (0712) 452389 | Email: sman1tanahabangpali@sch.id
+        </p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <p class="text-white-50 mb-2">Ikuti Kami di Media Sosial</p>
+        <div class="d-flex justify-content-center justify-content-md-end gap-3">
+          <a href="#" class="text-white-50 hover:text-white"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="#" class="text-white-50 hover:text-white"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#" class="text-white-50 hover:text-white"><i class="bi bi-youtube fs-5"></i></a>
+          <a href="#" class="text-white-50 hover:text-white"><i class="bi bi-whatsapp fs-5"></i></a>
+        </div>
+        <p class="text-white-50 mt-3 mb-0 small">© 2025 SMA Negeri 1 Tanah Abang Pali. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>                  

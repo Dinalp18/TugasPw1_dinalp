@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMA Negeri 1 Tanah Abang Pali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tambahkan ikon untuk tampilan lebih menarik -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      scroll-behavior: smooth;
+    }
+
+    /* Logo Sekolah - 100% khusus SMAN 1 Tanah Abang Pali */
+    .logo-sekolah {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #2c5f2d, #97bc62);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .logo-sekolah::after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+    .logo-sekolah-small {
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+    }
+    .logo-sekolah-small::after {
+      width: 12px;
+      height: 12px;
+      bottom: 5px;
+      right: 5px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(44, 95, 45, 0.8), rgba(44, 95, 45, 0.8)),
+                  url('https://images.unsplash.com/photo-1581090464777-513839d79b1a?auto=format&fit=crop&w=1400&q=80'); /* Latar lanskap Pali */
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 120px 0;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to top, #f0f4f8, transparent);
+    }
+
+    /* Judul Section */
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #2c5f2d;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background-color: #97bc62;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-title-left::after {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    /* Card & Komponen */
+    .feature-card {
+      transition: all 0.3s ease;
+      border: none;
+      border-top: 4px solid #2c5f2d;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(44, 95, 45, 0.15);
+    }
+    .facility-card {
+      transition: all 0.3s ease;
+    }
+    .facility-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(44, 95, 45, 0.1);
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #f8fbf8;
+      color: #2c5f2d;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2c5f2d;
+      color: white;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      color: #2c5f2d;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      background-color: #97bc62;
+      color: white;
+    }
+
+    /* Gambar Placeholder */
+    .img-placeholder {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #e0ebe0, #97bc62);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c5f2d;
+      font-size: 1.2rem;
+      border-radius: 8px;
+    }
+    .img-placeholder-small {
+      height: 150px;
+      font-size: 1rem;
+    }
+
+    /* Tombol */
+    .btn-success-custom {
+      background-color: #2c5f2d;
+      border-color: #2c5f2d;
+    }
+    .btn-success-custom:hover {
+      background-color: #1f4620;
+      border-color: #1f4620;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="logo-sekolah me-2"></div>
+        <a class="navbar-brand fw-bold" href="index.html">SMAN 1 Tanah Abang Pali</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSekolah" aria-controls="navbarSekolah" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSekolah">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-door-fill me-1"></i> Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#profil"><i class="bi bi-building-fill me-1"></i> Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#program"><i class="bi bi-book-fill me-1"></i> Program</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fasilitas"><i class="bi bi-gear-fill me-1"></i> Fasilitas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#prestasi"><i class="bi bi-trophy-fill me-1"></i> Prestasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak"><i class="bi bi-envelope-fill me-1"></i> Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+    <div class="container">
+      <div class="d-flex justify-content-center mb-4">
+        <div class="logo-sekolah"></div>
+      </div>
+      <h1 class="display-4 fw-bold mb-3">Selamat Datang di SMA Negeri 1 Tanah Abang Pali</h1>
+      <p class="lead mb-5 mx-auto" style="max-width: 800px;">"Mendidik Generasi Berkarakter, Kompeten, dan Berwawasan Global untuk Masa Depan Negeri"</p>
+      <button class="btn btn-light btn-lg me-3" data-bs-toggle="modal" data-bs-target="#infoModal">
+        <i class="bi bi-calendar-check-fill me-1"></i> Info Pendaftaran
+      </button>
+      <a href="#profil" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-info-circle-fill me-1"></i> Lihat Profil Sekolah
+      </a>
+    </div>
+  </section>
+
+  <!-- Profil Section -->
+  <section class="py-5" id="profil">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="section-title section-title-left">Tentang Sekolah</h2>
+          <p class="text-muted mb-4">
+            SMA Negeri 1 Tanah Abang Pali (SMAN 1 TAB Pali) merupakan salah satu sekolah menengah atas negeri terbaik di Kabupaten Pali, Sumatera Selatan. Berdiri sejak tahun 1985, sekolah ini telah melalui berbagai tahap perkembangan dan kini menjadi sekolah unggulan dengan akreditasi A dari Badan Akreditasi Nasional Pendidikan (BAN-PT).
+          </p>
+          <p class="text-muted mb-4">
+            Dengan visi "Menjadi Sekolah Unggulan yang Mendidik Siswa Berkarakter, Cerdas, dan Mandiri", SMAN 1 Tanah Abang Pali terus berkomitmen untuk memberikan pendidikan berkualitas yang tidak hanya fokus pada prestasi akademik, tetapi juga pembentukan kepribadian yang baik.
+          </p>
+          <div class="d-flex gap-3 mb-3">
+            <div class="text-center">
+              <h4 class="text-success fw-bold">38+</h4>
+              <p class="text-muted small">Tahun Berdiri</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-success fw-bold">24</h4>
+              <p class="text-muted small">Rombongan Belajar</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-success fw-bold">650+</h4>
+              <p class="text-muted small">Siswa Aktif</p>
+            </div>
+            <div class="text-center">
+              <h4 class="text-success fw-bold">52</h4>
+              <p class="text-muted small">Guru Berkompeten</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="img-placeholder">
+            <div class="text-center">
+              <i class="bi bi-building-fill display-1 mb-2"></i>
+              <p>Gedung SMA Negeri 1 Tanah Abang Pali</p>
+            </div>
+          </div>
+          <div class="row g-2 mt-3">
+            <div class="col-6">
+              <div class="img-placeholder img-placeholder-small">
+                <div class="text-center">
+                  <i class="bi bi-people-fill display-6 mb-1"></i>
+                  <p>Siswa & Guru</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="img-placeholder img-placeholder-small">
+                <div class="text-center">
+                  <i class="bi bi-flag-fill display-6 mb-1"></i>
+                  <p>Upacara Bendera</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Keunggulan Section -->
+  <section class="py-5 bg-white" id="program">
+    <div class="container">
+      <h2 class="section-title text-center mb-2">Keunggulan Program Sekolah</h2>
+      <p class="text-center text-muted mb-5" style="max-width: 900px; margin: 0 auto 50px auto;">
+        Sekolah kami menyelenggarakan berbagai program pembelajaran yang dirancang untuk mengembangkan potensi siswa secara optimal, sesuai dengan kebutuhan zaman dan tuntutan dunia kerja.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-laptop-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Sistem Smart School</h4>
+              <p class="card-text text-muted">
+                Pembelajaran berbasis teknologi digital dengan penggunaan perangkat tablet dan platform e-learning, membuat proses belajar lebih interaktif dan mendorong kreativitas siswa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-award-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Terakreditasi A</h4>
+              <p class="card-text text-muted">
+                Memiliki sertifikat akreditasi A yang menjamin kualitas pembelajaran, kurikulum, dan fasilitas sesuai standar nasional, serta siap bersaing di tingkat regional dan nasional.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-globe-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Program Keahlian Khusus</h4>
+              <p class="card-text text-muted">
+                Menawarkan program keahlian bidang IPA dengan fokus pada penelitian sains, serta bidang IPS dengan fokus pada kewirausahaan dan hubungan internasional.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-book-half display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Kurikulum Berbasis Karakter</h4>
+              <p class="card-text text-muted">
+                Mengintegrasikan pembelajaran akademik dengan pembinaan nilai-nilai budaya, religius, dan sosial, membentuk siswa yang memiliki integritas moral dan tanggung jawab.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-people-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Program Pertukaran Siswa</h4>
+              <p class="card-text text-muted">
+                Berkolaborasi dengan sekolah-sekolah di dalam dan luar negeri untuk program pertukaran siswa, memperluas wawasan dan pengalaman siswa secara global.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center
+
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Fasilitas Section -->
+  <section class="py-5" id="fasilitas">
+    <div class="container">
+      <h2 class="section-title text-center mb-2">Fasilitas Sekolah</h2>
+      <p class="text-center text-muted mb-5">
+        Fasilitas modern dan lengkap untuk mendukung proses belajar mengajar dan pengembangan potensi siswa
+      </p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-flask-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Laboratorium</h4>
+              <p class="card-text text-muted">
+                6 laboratorium terlengkap (komputer, kimia, biologi, fisika, bahasa, dan multimedia) dengan peralatan modern dan aman.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-book-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Perpustakaan</h4>
+              <p class="card-text text-muted">
+                Ruang baca nyaman dengan koleksi 15.000+ buku, akses e-book, zona internet bebas, dan ruang diskusi kelompok.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-balloon-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Lapangan Olahraga</h4>
+              <p class="card-text text-muted">
+                Lapangan futsal, basket, voli, tenis meja, dan lapangan upacara luas dengan area hijau yang asri.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-palette-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Ruang Kreatif</h4>
+              <p class="card-text text-muted">
+                Ruang seni tari, musik, teater, dan kerajinan tangan yang dilengkapi dengan peralatan pendukung.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-cpu-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Ruang Komputer</h4>
+              <p class="card-text text-muted">
+                2 ruang komputer dengan 80 unit PC terkini, akses internet berkecepatan tinggi, dan perangkat printer 3D.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center">
+              <div class="mb-3 text-success">
+                <i class="bi bi-mic-fill display-4"></i>
+              </div>
+              <h4 class="card-title text-success">Aula Serbaguna</h4>
+              <p class="card-text text-muted">
+                Aula dengan kapasitas 500 orang, dilengkapi sound system profesional, proyektor, dan panggung yang nyaman.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Prestasi Section -->
+<section class="py-5 bg-white" id="prestasi">
+<div class="container">
+<h2 class="section-title text-center mb-2">Prestasi Sekolah</h2>
+<p class="text-center text-muted mb-5">
+  Prestasi yang diraih siswa dan sekolah sebagai bukti komitmen kami dalam memberikan pendidikan berkualitas
+</p>
+<div class="row g-4">
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title text-success fw-bold">Juara 1 Olimpiade Sains Nasional</h5>
+          <span class="badge bg-success">2025</span>
+        </div>
+        <p class="card-text text-muted">
+          Raih oleh siswa kelas XI IPA, dalam bidang Kimia pada ajang Olimpiade Sains Nasional yang diselenggarakan di Jakarta.
+        </p>
+        <div class="img-placeholder img-placeholder-small mt-3">
+          <div class="text-center">
+            <i class="bi bi-trophy-fill display-6 mb-1"></i>
+            <p>Pemenang Olimpiade Kimia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title text-success fw-bold">Juara 2 Lomba Debat Bahasa Inggris</h5>
+          <span class="badge bg-success">2025</span>
+        </div>
+        <p class="card-text text-muted">
+          Tim debat sekolah meraih juara 2 pada ajang Lomba Debat Bahasa Inggris Tingkat Provinsi Sumatera Selatan.
+        </p>
+        <div class="img-placeholder img-placeholder-small mt-3">
+          <div class="text-center">
+            <i class="bi bi-chat-left-quote-fill display-6 mb-1"></i>
+            <p>Tim Debat Sekolah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title text-success fw-bold">Sekolah Adiwiyata Mandiri</h5>
+          <span class="badge bg-success">2024</span>
+        </div>
+        <p class="card-text text-muted">
+          Mendapatkan penghargaan Sekolah Adiwiyata Mandiri dari Kementerian Lingkungan Hidup dan Kehutanan RI.
+        </p>
+        <div class="img-placeholder img-placeholder-small mt-3">
+          <div class="text-center">
+            <i class="bi bi-award-fill display-6 mb-1"></i>
+            <p>Penghargaan Adiwiyata</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title text-success fw-bold">Juara 1 Festival Seni Siswa Nasional</h5>
+          <span class="badge bg-success">2024</span>
+        </div>
+        <p class="card-text text-muted">
+          Kelompok tari tradisional sekolah meraih juara 1 pada ajang Festival Seni Siswa Nasional di Yogyakarta.
+        </p>
+        <div class="img-placeholder img-placeholder-small mt-3">
+          <div class="text-center">
+            <i class="bi bi-music-note-beamed display-6 mb-1"></i>
+            <p>Kelompok Tari Tradisional</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title text-success fw-bold">Juara 3 Turnamen Futsal Antar Sekolah</h5>
+          <span class="badge bg-success">2025</span>
+        </div>
+        <p class="card-text text-muted">
+          Tim futsal sekolah meraih juara 3 pada Turnamen Futsal Antar Sekolah Tingkat Provinsi.
+        </p>
+        <div class="img-placeholder img-placeholder-small mt-3">
+          <div class="text-center">
+            <i class="bi bi-ball-football-fill display-6 mb-1"></i>
+            <p>Tim Futsal Sekolah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title text-success fw-bold">Juara 1 Lomba Karya Tulis Ilmiah Siswa</h5>
+          <span class="badge bg-success">2025</span>
+        </div>
+        <p class="card-text text-muted">
+          Siswa kelas XII IPA meraih juara 1 dengan karya tulis ilmiah tentang inovasi teknologi ramah lingkungan.
+        </p>
+        <div class="img-placeholder img-placeholder-small mt-3">
+          <div class="text-center">
+            <i class="bi bi-file-earmark-text-fill display-6 mb-1"></i>
+            <p>Karya Tulis Ilmiah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Informasi Umum Section -->
+<section class="py-5">
+<div class="container">
+<h2 class="section-title text-center mb-2">Informasi Umum</h2>
+<p class="text-center text-muted mb-5">
+  Pertanyaan yang sering diajukan tentang SMA Negeri 1 Tanah Abang Pali
+</p>
+<div class="accordion" id="accordionInfo">
+  <div class="accordion-item mb-3 shadow-sm">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <i class="bi bi-calendar-event-fill text-success me-2"></i> Kapan pendaftaran peserta didik baru dibuka?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionInfo">
+      <div class="accordion-body text-muted">
+        Pendaftaran peserta didik baru untuk tahun ajaran 2025/2026 akan dibuka mulai tanggal 1 Mei - 31 Mei 2025. Pendaftaran dapat dilakukan secara daring melalui website resmi sekolah atau secara langsung ke bagian administrasi sekolah. Jadwal resmi akan diumumkan melalui media sosial sekolah dan papan pengumuman di depan gerbang sekolah.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item mb-3 shadow-sm">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <i class="bi bi-star-fill text-success me-2"></i> Apakah tersedia ekstrakurikuler dan kegiatan siswa lainnya?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionInfo">
+      <div class="accordion-body text-muted">
+        Ya, tersedia berbagai kegiatan ekstrakurikuler yang dapat dipilih sesuai minat dan bakat siswa, antara lain: <br>
+        • Olahraga: Futsal, Basket, Voli, Bulu Tangkis, Tenis Meja <br>
+        • Seni: Tari Tradisional, Tari Kontemporer, Musik, Teater, Melukis <br>
+        • Organisasi: Pramuka, OSIS, MPK, Klub Sains, Klub Bahasa Inggris <br>
+        • Kegiatan Khusus: Program Pengembangan Wirausaha, Program Pelestarian Budaya Lokal
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item mb-3 shadow-sm">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <i class="bi bi-phone-fill text-success me-2"></i> Bagaimana cara menghubungi sekolah?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionInfo">
+      <div class="accordion-body text-muted">
+        Anda dapat menghubungi sekolah melalui berbagai cara: <br>
+        • Telepon Kantor: (0712) 452389 (Senin-Jumat, pukul 07.30 - 15.30 WIB) <br>
+        • Email: sman1tanahabangpali@sch.id <br>
+        • Alamat Kantor: Jl. Merdeka No. 15, Desa Tanah Abang, Kecamatan Tanah Abang, Kabupaten Pali, Sumatera Selatan, Kode Pos 31256 <br>
+        • Media Sosial: Instagram @sman1tanahabangpali, Facebook SMA Negeri 1 Tanah Abang Pali
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item mb-3 shadow-sm">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <i class="bi bi-book-fill text-success me-2"></i> Apa saja persyaratan untuk pendaftaran siswa baru?
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionInfo">
+      <div class="accordion-body text-muted">
+        Persyaratan pendaftaran siswa baru meliputi:
+        • Fotokopi rapor semester 1-5 (asli dilembarasi sekolah asal) <br>
+        • Fotokopi akta kelahiran (dilembarasi) <br>
+        • Fotokopi kartu keluarga (halaman depan dan anggota keluarga) <br>
+        • Surat keterangan kelakuan baik dari sekolah asal <br>
+        • Surat keterangan kesehatan dari puskesmas atau rumah sakit <br>
+        • 4 lembar foto warna ukuran 3x4 cm <br>
+        • Bukti prestasi akademik atau non-akademik (jika ada)
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item mb-3 shadow-sm">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        <i class="bi bi-bus-fill text-success me-2"></i> Apakah tersedia fasilitas transportasi untuk siswa?
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionInfo">
+      <div class="accordion-body text-muted">
+        Ya, sekolah menyediakan armada bus sekolah yang melayani beberapa rute utama di wilayah Kabupaten Pali, antara lain rute Pali Kota - Tanah Abang, rute Indralaya - Tanah Abang, dan rute Muara Enim - Tanah Abang. Selain itu, sekolah juga bekerja sama dengan penyedia transportasi umum yang khusus melayani siswa sekolah dengan tarif khusus. Informasi detail rute dan jadwal dapat diambil di bagian administrasi sekolah atau melalui aplikasi resmi sekolah.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Kontak Section -->
+<section class="py-5 bg-white" id="kontak">
+<div class="container">
+<h2 class="section-title text-center mb-2">Kontak Kami</h2>
+<p class="text-center text-muted mb-5">
+  Hubungi kami untuk informasi lebih lanjut atau kirimkan pertanyaan Anda melalui formulir di bawah ini
+</p>
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="bg-white p-4 rounded shadow-sm h-100">
+      <h5 class="text-success fw-bold mb-4"><i class="bi bi-map-marker-fill me-2"></i> Alamat & Informasi Kontak</h5>
+      <div class="d-flex align-items-start mb-3">
+        <div class="text-success me-3 mt-1"><i class="bi bi-geo-alt-fill"></i></div>
+        <div class="text-muted">
+          Jl. Merdeka No. 15, Desa Tanah Abang, Kecamatan Tanah Abang, Kabupaten Pali, Sumatera Selatan, Kode Pos 31256
+        </div>
+      </div>
+      <div class="d-flex align-items-start mb-3">
+        <div class="text-success me-3 mt-1"><i class="bi bi-envelope-fill"></i></div>
+        <div class="text-muted">
+          sman1tanahabangpali@sch.id <br>
+          admin.sman1tabpali@sch.id
+        </div>
+      </div>
+      <div class="d-flex align-items-start mb-3">
+        <div class="text-success me-3 mt-1"><i class="bi bi-telephone-fill"></i></div>
+        <div class="text-muted">
+          (0712) 452389 (Kantor Administrasi) <br>
+          (0712) 452390 (Bagian Akademik)
+        </div>
+      </div>
+      <div class="d-flex align-items-start mb-3">
+        <div class="text-success me-3 mt-1"><i class="bi bi-clock-fill"></i></div>
+        <div class="text-muted">
+          Jam Operasional Kantor: <br>
+          Senin - Jumat: 07.30 WIB - 15.30 WIB <br>
+          Sabtu: 08.00 WIB - 12.00 WIB
+        </div>
+      </div>
+      <h5 class="text-success fw-bold mt-5 mb-3"><i class="bi bi-globe me-2"></i> Ikuti Kami di Media Sosial</h5>
+      <div class="d-flex gap-3">
+        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <div class="mt-4">
+        <div class="img-placeholder" style="height: 200px;">
+          <div class="text-center">
+            <i class="bi bi-map-fill display-4 mb-2"></i>
+            <p>Peta Lokasi SMA Negeri 1 Tanah Abang Pali</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="bg-white p-4 rounded shadow-sm h-100">
+      <h5 class="text-success fw-bold mb-4"><i class="bi bi-pencil-square me-2"></i> Kirim Pesan Kepada Kami</h5>
+      <form onsubmit="kirimPesan(event)">
+        <div class="mb-3">
+          <label class="form-label text-muted">Nama Lengkap <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text text-success"><i class="bi bi-person-fill"></i></span>
+            <input type="text" class="form-control" id="nama" required placeholder="Masukkan nama lengkap Anda">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-muted">Email Aktif <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text text-success"><i class="bi bi-envelope-fill"></i></span>
+            <input type="email" class="form-control" id="email" required placeholder="Masukkan email aktif Anda">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-muted">Nomor Telepon <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text text-success"><i class="bi bi-phone-fill"></i></span>
+            <input type="tel" class="form-control" id="telepon" required placeholder="Masukkan nomor telepon Anda">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-muted">Subjek Pesan</label>
+          <div class="input-group">
+            <span class="input-group-text text-success"><i class="bi bi-tag-fill"></i></span>
+            <select class="form-select" id="subjek">
+              <option value="Pertanyaan Pendaftaran">Pertanyaan Pendaftaran</option>
+              <option value="Informasi Program Studi">Informasi Program Studi</option>
+              <option value="Permintaan Kerjasama">Permintaan Kerjasama</option>
+              <option value="Keluhan atau Saran">Keluhan atau Saran</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-muted">Pesan Anda <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text text-success"><i class="bi bi-chat-left-text-fill"></i></span>
+            <textarea class="form-control" id="pesan" rows="5" required placeholder="Tulis pesan atau pertanyaan Anda di sini"></textarea>
+          </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="persetujuan" required>
+          <label class="form-check-label text-muted" for="persetujuan">
+            Saya menyetujui bahwa data yang saya kirimkan akan digunakan untuk keperluan penanganan pertanyaan/saran saya
+          </label>
+        </div>
+        <button type="submit" class="btn btn-success-custom w-100 py-2">
+          <i class="bi bi-paper-plane-fill me-2"></i> Kirim Pesan
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Modal Info Pendaftaran -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content shadow-sm">
+  <div class="modal-header bg-success text-white">
+    <h5 class="modal-title" id="infoModalLabel"><i class="bi bi-calendar-check-fill me-2"></i> INFORMASI PENDAFTARAN SISWA BARU TAHUN AJARAN 2025/2026</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body text-muted">
+    <div class="row">
+      <div class="col-md-6">
+        <h6 class="text-success fw-bold mb-3"><i class="bi bi-calendar-event-fill me-1"></i> JADWAL PENDAFTARAN</h6>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Pendaftaran Daring: 1 Mei - 31 Mei 2025</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Pendaftaran Langsung: 10 Mei - 20 Mei 2025</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Verifikasi Dokumen: 25 Mei - 31 Mei 2025</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Pengumuman Hasil: 10 Juni 2025</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Pendaftaran Ulang: 12 Juni - 15 Juni 2025</li>
+        </ul>
+
+        <h6 class="text-success fw-bold mb-3"><i class="bi bi-file-text-fill me-1"></i> CARA PENDAFTARAN</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-success me-2"></i> <strong>Daring:</strong> Kunjungi website resmi sekolah di www.sman1tanahabangpali.sch.id dan ikuti panduan pendaftaran online</li>
+          <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-success me-2"></i> <strong>Langsung:</strong> Kunjungi bagian administrasi sekolah dengan membawa semua dokumen persyaratan</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h6 class="text-success fw-bold mb-3"><i class="bi bi-list-check-fill me-1"></i> SYARAT DAN KETENTUAN</h6>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Siswa lulusan SMP/MTs atau sederajat dari seluruh Indonesia</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Nilai rata-rata raport semester 1-5 minimal 7.5</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Tidak memiliki catatan pelanggaran berat di sekolah asal</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Dapat mengikuti seluruh proses pembelajaran dan kegiatan sekolah</li>
+        </ul>
+
+        <h6 class="text-success fw-bold mb-3"><i class="bi bi-gift-fill me-1"></i> KEUNTUNGAN MENDAFTAR DI SMAN 1 TAB PALI</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="bi bi-star-fill text-success me-2"></i> Beasiswa untuk siswa berprestasi dan kurang mampu</li>
+          <li class="mb-2"><i class="bi bi-star-fill text-success me-2"></i> Akses ke program pertukaran siswa dan beasiswa luar negeri</li>
+          <li class="mb-2"><i class="bi bi-star-fill text-success me-2"></i> Fasilitas sekolah modern dan lengkap</li>
+          <li class="mb-2"><i class="bi bi-star-fill text-success me-2"></i> Guru berkompeten dan berpengalaman</li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <p class="fw-bold text-success">Untuk informasi lebih lanjut, hubungi bagian administrasi sekolah atau kunjungi website resmi kami</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success-custom" data-bs-dismiss="modal">
+      <i class="bi bi-x-circle-fill me-1"></i> Tutup
+    </button>
+    <a href="#" class="btn btn-outline-success">
+      <i class="bi bi-download-fill me-1"></i> Unduh Brosur Pendaftaran
+    </a>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="py-5">
+<div class="container">
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+      <div class="logo-sekolah-small me-2"></div>
+      <h5 class="fw-bold mb-0">SMA NEGERI 1 TANAH ABANG PALI</h5>
+    </div>
+    <p class="text-white-50 mb-3">
+      "Mendidik Generasi Berkarakter, Kompeten, dan Berwawasan Global untuk Masa Depan Negeri"
+    </p>
+    <p class="text-white-50">
+      Sebagai sekolah unggulan di Kabupaten Pali, kami berkomitmen untuk memberikan pendidikan berkualitas yang mengembangkan potensi siswa secara optimal.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h5 class="text-white fw-bold mb-3">TAUTAN BERMANFAAT</h5>
+    <ul class="list-unstyled">
+      <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none hover-text-light"><i class="bi bi-arrow-right-circle-fill text-success me-2"></i> Website Resmi Kementerian Pendidikan</a></li>
+      <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none hover-text-light"><i class="bi bi-arrow-right-circle-fill text-success me-2"></i> Badan Akreditasi Nasional Pendidikan</a></li>
+      <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none hover-text-light"><i class="bi bi-arrow-right-circle-fill text-success me-2"></i> Dinas Pendidikan Sumatera Selatan</a></li>
+      <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none hover-text-light"><i class="bi bi-arrow-right-circle-fill text-success me-2"></i> Kabupaten Pali Official</a></li>
+      <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none hover-text-light"><i class="bi bi-arrow-right-circle-fill text-success me-2">
+
+
